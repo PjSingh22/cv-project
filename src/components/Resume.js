@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Resume extends Component {
-  render() {
-    return (
-      <div>Resume component</div>
-    );
-  }
+export default function Resume(props) {
+  return (
+    <div>
+      <h1>Resume</h1>
+      {console.log(props.resume)}
+    </div>
+  )
 }
