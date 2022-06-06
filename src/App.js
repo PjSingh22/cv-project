@@ -24,8 +24,12 @@ class App extends Component {
         languages: [],
         interests: [],
         references: [],
-      }
-    }
+      },
+    };
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
   };
 
   render() {
