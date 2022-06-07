@@ -8,6 +8,22 @@ class App extends Component {
     super();
 
     this.state = {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      summary: '',
+      skills: [],
+      school: '',
+      degree: '',
+      major: '',
+      company: '',
+      title: '',
+      tasks:[],
+      resume: {
         name: '',
         email: '',
         phone: '',
@@ -17,22 +33,12 @@ class App extends Component {
         zip: '',
         summary: '',
         skills: [],
-        education: {
-          school: '',
-          degree: '',
-          major: '',
-        },
-        experience: {
-          company: '',
-          title: '',
-          startDate: '',
-        },
-      resume: {
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
+        school: '',
+        degree: '',
+        major: '',
+        company: '',
+        title: '',
+        tasks: [],
       }
     };
   };
@@ -52,18 +58,59 @@ class App extends Component {
         phone: this.state.phone,
         address: this.state.address,
         city: this.state.city,
-
+        state: this.state.state,
+        zip: this.state.zip,
+        summary: this.state.summary,
+        skills: this.state.skills,
+        school: this.state.school,
+        degree: this.state.degree,
+        major: this.state.major,
+        company: this.state.company,
+        title: this.state.title,
+        tasks: this.state.tasks
       },
       name: '',
       email: '',
       phone: '',
       address: '',
       city: '',
+      state: '',
+      zip: '',
+      summary: '',
+      skills: '',
+      school: '',
+      degree: '',
+      major: '',
+      company: '',
+      title: '',
+      tasks: '',
     });
   };
 
+  // editResume = (e) => {
+  //   e.preventDefault();
+
+  // }
+
   render() {
-    const { resume, name, email, phone, address, city, state, zip, summary, skills, education, experience } = this.state;
+    const { 
+      resume, 
+      name, 
+      email, 
+      phone, 
+      address, 
+      city, 
+      state, 
+      zip, 
+      summary, 
+      skills,
+      school,
+      degree,
+      major,
+      company,
+      title,
+      tasks,
+    } = this.state;
 
     return (
       <div className='app'>
@@ -87,10 +134,18 @@ class App extends Component {
           <textarea id='summary' value={summary} onChange={this.handleChange} />
           <label htmlFor='skills'>Skills:</label>
           <textarea id='skills' value={skills} onChange={this.handleChange} />
-          <label htmlFor='education'>Education:</label>
-          <textarea id='education' value={education} onChange={this.handleChange} />
-          <label htmlFor='experience'>Experience:</label>
-          <textarea id='experience' value={experience} onChange={this.handleChange} />
+          <label htmlFor='school'>School:</label>
+          <input type='text' id='school' value={school} onChange={this.handleChange} />
+          <label htmlFor='degree'>Degree:</label>
+          <input type='text' id='degree' value={degree} onChange={this.handleChange} />
+          <label htmlFor='major'>Major:</label>
+          <input type='text' id='major' value={major} onChange={this.handleChange} />
+          <label htmlFor='company'>Company:</label>
+          <input type='text' id='company' value={company} onChange={this.handleChange} />
+          <label htmlFor='title'>Title:</label>
+          <input type='text' id='title' value={title} onChange={this.handleChange} />
+          <lable htmlFor='tasks'>Tasks:</lable>
+          <textarea id='tasks' value={tasks} onChange={this.handleChange} />
           <button type='submit'>Submit</button>
         </form>
         <Resume resume={resume}/>
