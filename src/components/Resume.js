@@ -1,5 +1,5 @@
 import React from 'react';
-import './Resume.css';
+import '../styles/Resume.css';
 
 export default function Resume(props) {
   const { resume } = props;
@@ -8,12 +8,9 @@ export default function Resume(props) {
     return null;
   }
 
-  // editResume = () => {
-  //   props.editResume(resume);
-  // }
-
   return (
     <div className='resume-container'>
+      <button type='button' className='edit-btn' onClick={props.editResume}>Edit</button>
       <div className='resume-header section'>
         <h1>{resume.name}</h1>
         <h2>{resume.email}</h2>
@@ -45,7 +42,6 @@ export default function Resume(props) {
           <li>Tasks: {resume.tasks}</li>
         </ul>
       </div>
-      <button type='button' className='edit-btn'>Edit</button>
     </div>
   )
 }
